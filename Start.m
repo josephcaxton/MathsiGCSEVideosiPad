@@ -83,7 +83,7 @@
     
     LoginTitle = @"";
     
-    TVHeaderImage = [UIImage imageNamed:@"TV_maths_header.png"];
+    TVHeaderImage = [UIImage imageNamed:@"TV_MathsiGCSE_header.png"];
     TVHeaderImageView = [[UIImageView alloc] initWithImage:TVHeaderImage];
     TVHeaderImageView.frame = CGRectMake(130 ,30, 495, 223);
     [FirstView addSubview:TVHeaderImageView];

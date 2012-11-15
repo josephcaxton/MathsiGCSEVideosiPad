@@ -71,7 +71,6 @@
 		7C18BF57162865C800CB0AC8 /* hero_maths.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C18BF55162865C800CB0AC8 /* hero_maths.png */; };
 		7C18BF58162865C800CB0AC8 /* hero_maths@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C18BF56162865C800CB0AC8 /* hero_maths@2x.png */; };
 		7C18BF5B16286A6600CB0AC8 /* UnderlinedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C18BF5A16286A4400CB0AC8 /* UnderlinedButton.m */; };
-		7C18BF5D16286D8C00CB0AC8 /* TV_maths_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C18BF5C16286D8C00CB0AC8 /* TV_maths_header.png */; };
 		7C1CEBBB1561410F0065CA47 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1CEBBA1561410F0065CA47 /* img1.png */; };
 		7C1CEBBD156141220065CA47 /* img4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1CEBBC156141220065CA47 /* img4.png */; };
 		7C1CEBBF156141320065CA47 /* img10.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1CEBBE156141320065CA47 /* img10.png */; };
@@ -340,6 +339,7 @@
 		7CD9382D162C6114004EC5D8 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD9382C162C6114004EC5D8 /* Default-Landscape@2x.png */; };
 		7CD9382F162C6223004EC5D8 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD9382E162C6223004EC5D8 /* Icon-72@2x.png */; };
 		7CD93831162C697B004EC5D8 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD93830162C697A004EC5D8 /* Icon-Small-50@2x.png */; };
+		7CE699441655259F00215BBB /* TV_MathsiGCSE_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CE699431655259F00215BBB /* TV_MathsiGCSE_header.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -422,7 +422,6 @@
 		7C18BF56162865C800CB0AC8 /* hero_maths@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hero_maths@2x.png"; sourceTree = "<group>"; };
 		7C18BF5916286A4400CB0AC8 /* UnderlinedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnderlinedButton.h; sourceTree = "<group>"; };
 		7C18BF5A16286A4400CB0AC8 /* UnderlinedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnderlinedButton.m; sourceTree = "<group>"; };
-		7C18BF5C16286D8C00CB0AC8 /* TV_maths_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TV_maths_header.png; sourceTree = "<group>"; };
 		7C1CEBBA1561410F0065CA47 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
 		7C1CEBBC156141220065CA47 /* img4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img4.png; sourceTree = "<group>"; };
 		7C1CEBBE156141320065CA47 /* img10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img10.png; sourceTree = "<group>"; };
@@ -433,10 +432,10 @@
 		7C232CDA150F8A36003349AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7C232CDC150F8A36003349AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7C232CDE150F8A36003349AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7C232CE2150F8A36003349AE /* VideoStreamer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VideoStreamer-Info.plist"; sourceTree = "<group>"; };
+		7C232CE2150F8A36003349AE /* MathsiGCSEVideosiPad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MathsiGCSEVideosiPad-Info.plist"; sourceTree = "<group>"; };
 		7C232CE4150F8A36003349AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7C232CE6150F8A36003349AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7C232CE8150F8A36003349AE /* VideoStreamer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoStreamer-Prefix.pch"; sourceTree = "<group>"; };
+		7C232CE8150F8A36003349AE /* MathsiGCSEVideosiPad-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MathsiGCSEVideosiPad-Prefix.pch"; sourceTree = "<group>"; };
 		7C232CE9150F8A36003349AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = VideoStreamer/AppDelegate.h; sourceTree = "<group>"; };
 		7C232CEA150F8A36003349AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = VideoStreamer/AppDelegate.m; sourceTree = "<group>"; };
 		7C232D0A150F90D1003349AE /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -712,6 +711,7 @@
 		7CD9382C162C6114004EC5D8 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		7CD9382E162C6223004EC5D8 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		7CD93830162C697A004EC5D8 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		7CE699431655259F00215BBB /* TV_MathsiGCSE_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TV_MathsiGCSE_header.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -772,7 +772,7 @@
 				7C232D25150FA24A003349AE /* Resources */,
 				7C232D0C150F9CC0003349AE /* Icons */,
 				7C232D09150F8A7B003349AE /* Main Window */,
-				7C232CE0150F8A36003349AE /* VideoStreamer */,
+				7C232CE0150F8A36003349AE /* MathsiGCSEVideoiPad */,
 				7C232CD9150F8A36003349AE /* Frameworks */,
 				7C232CD7150F8A36003349AE /* Products */,
 			);
@@ -806,21 +806,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7C232CE0150F8A36003349AE /* VideoStreamer */ = {
+		7C232CE0150F8A36003349AE /* MathsiGCSEVideoiPad */ = {
 			isa = PBXGroup;
 			children = (
 				7C232CE1150F8A36003349AE /* Supporting Files */,
 			);
+			name = MathsiGCSEVideoiPad;
 			path = VideoStreamer;
 			sourceTree = "<group>";
 		};
 		7C232CE1150F8A36003349AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7C232CE2150F8A36003349AE /* VideoStreamer-Info.plist */,
+				7C232CE2150F8A36003349AE /* MathsiGCSEVideosiPad-Info.plist */,
 				7C232CE3150F8A36003349AE /* InfoPlist.strings */,
 				7C232CE6150F8A36003349AE /* main.m */,
-				7C232CE8150F8A36003349AE /* VideoStreamer-Prefix.pch */,
+				7C232CE8150F8A36003349AE /* MathsiGCSEVideosiPad-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -878,9 +879,9 @@
 				7CD9382E162C6223004EC5D8 /* Icon-72@2x.png */,
 				7C2DDB9615E6725C0025B38B /* Icon-Small-50.png */,
 				7CD93830162C697A004EC5D8 /* Icon-Small-50@2x.png */,
-				7C18BF5C16286D8C00CB0AC8 /* TV_maths_header.png */,
 				7C18BF55162865C800CB0AC8 /* hero_maths.png */,
 				7C18BF56162865C800CB0AC8 /* hero_maths@2x.png */,
+				7CE699431655259F00215BBB /* TV_MathsiGCSE_header.png */,
 				7C2DDB9915E6725C0025B38B /* iTunesArtwork.png */,
 				7C4D8E0015137A890065D044 /* BlackBackGround.png */,
 				7C9937DA162ABC1200ECF902 /* icon_email_to_friend.png */,
@@ -1220,9 +1221,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7C232CD5150F8A36003349AE /* VideoStreamer */ = {
+		7C232CD5150F8A36003349AE /* MathsiGCSEVideosiPad */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C232D02150F8A36003349AE /* Build configuration list for PBXNativeTarget "VideoStreamer" */;
+			buildConfigurationList = 7C232D02150F8A36003349AE /* Build configuration list for PBXNativeTarget "MathsiGCSEVideosiPad" */;
 			buildPhases = (
 				7C232CD2150F8A36003349AE /* Sources */,
 				7C232CD3150F8A36003349AE /* Frameworks */,
@@ -1232,7 +1233,7 @@
 			);
 			dependencies = (
 			);
-			name = VideoStreamer;
+			name = MathsiGCSEVideosiPad;
 			productName = VideoStreamer;
 			productReference = 7C232CD6150F8A36003349AE /* Maths Videos.app */;
 			productType = "com.apple.product-type.application";
@@ -1246,7 +1247,7 @@
 				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = caxtonidowu;
 			};
-			buildConfigurationList = 7C232CD0150F8A36003349AE /* Build configuration list for PBXProject "VideoStreamer" */;
+			buildConfigurationList = 7C232CD0150F8A36003349AE /* Build configuration list for PBXProject "MathsiGCSEVideosiPad" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1258,7 +1259,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7C232CD5150F8A36003349AE /* VideoStreamer */,
+				7C232CD5150F8A36003349AE /* MathsiGCSEVideosiPad */,
 			);
 		};
 /* End PBXProject section */
@@ -1543,7 +1544,6 @@
 				7C18BF5016285B9600CB0AC8 /* free_and_paid_videos.png in Resources */,
 				7C18BF57162865C800CB0AC8 /* hero_maths.png in Resources */,
 				7C18BF58162865C800CB0AC8 /* hero_maths@2x.png in Resources */,
-				7C18BF5D16286D8C00CB0AC8 /* TV_maths_header.png in Resources */,
 				7C919EC716299EC700958F1F /* free.png in Resources */,
 				7C919EE81629C42900958F1F /* subscribe.png in Resources */,
 				7C9937CF162ABAE500ECF902 /* buy_now.png in Resources */,
@@ -1568,6 +1568,7 @@
 				7CD9382D162C6114004EC5D8 /* Default-Landscape@2x.png in Resources */,
 				7CD9382F162C6223004EC5D8 /* Icon-72@2x.png in Resources */,
 				7CD93831162C697B004EC5D8 /* Icon-Small-50@2x.png in Resources */,
+				7CE699441655259F00215BBB /* TV_MathsiGCSE_header.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1674,8 +1675,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "VideoStreamer/VideoStreamer-Prefix.pch";
-				INFOPLIST_FILE = "VideoStreamer/VideoStreamer-Info.plist";
+				GCC_PREFIX_HEADER = "VideoStreamer/MathsiGCSEVideosiPad-Prefix.pch";
+				INFOPLIST_FILE = "VideoStreamer/MathsiGCSEVideosiPad-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1695,8 +1696,8 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Theta Computer Services Limited";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "VideoStreamer/VideoStreamer-Prefix.pch";
-				INFOPLIST_FILE = "VideoStreamer/VideoStreamer-Info.plist";
+				GCC_PREFIX_HEADER = "VideoStreamer/MathsiGCSEVideosiPad-Prefix.pch";
+				INFOPLIST_FILE = "VideoStreamer/MathsiGCSEVideosiPad-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1713,7 +1714,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7C232CD0150F8A36003349AE /* Build configuration list for PBXProject "VideoStreamer" */ = {
+		7C232CD0150F8A36003349AE /* Build configuration list for PBXProject "MathsiGCSEVideosiPad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C232D00150F8A36003349AE /* Debug */,
@@ -1722,7 +1723,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C232D02150F8A36003349AE /* Build configuration list for PBXNativeTarget "VideoStreamer" */ = {
+		7C232D02150F8A36003349AE /* Build configuration list for PBXNativeTarget "MathsiGCSEVideosiPad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C232D03150F8A36003349AE /* Debug */,
