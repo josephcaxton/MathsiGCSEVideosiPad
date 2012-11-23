@@ -758,7 +758,7 @@
     }
     
     
-    NSString *str = @"https://userpub.itunes.apple.com/WebObjects/MZUserPublishing.woa/wa/addUserReview?id=522347113&type=Purple+Software"; 
+    NSString *str = @"https://userpub.itunes.apple.com/WebObjects/MZUserPublishing.woa/wa/addUserReview?id=581463148&type=Purple+Software"; 
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
