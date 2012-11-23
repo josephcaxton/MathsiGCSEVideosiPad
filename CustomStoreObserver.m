@@ -172,29 +172,29 @@
     // Only 1 month to 1 Year subscription supported
 
     
-    if ([[theProductID lowercaseString] isEqualToString:@"maths1month"] ){
+    if ([[theProductID lowercaseString] isEqualToString:@"mathsigcse1month"] ){
         
         return @"31";
         
     }
     
-    else if ([[theProductID lowercaseString] isEqualToString:@"maths3months"] ){
+    else if ([[theProductID lowercaseString] isEqualToString:@"mathsigcse3months"] ){
         
         return @"93";
         
     }
-    else if ([[theProductID lowercaseString] isEqualToString:@"maths6months"] ){
+    else if ([[theProductID lowercaseString] isEqualToString:@"mathsigcse6months"] ){
         
         return @"186";
         
     }
     
-    else if ([[theProductID lowercaseString] isEqualToString:@"maths9months"] ){
+    else if ([[theProductID lowercaseString] isEqualToString:@"mathsigcse9months"] ){
         
         return @"279";
         
     }
-    else if ([[theProductID lowercaseString] isEqualToString:@"maths12months"] ){
+    else if ([[theProductID lowercaseString] isEqualToString:@"mathsigcse12months"] ){
         
         return @"372";
         
@@ -409,7 +409,7 @@
     NSURL *url = [NSURL URLWithString:queryString];
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
     
-    VerificationAppID = @"1"; //Maths iPad
+    VerificationAppID = @"9"; //Maths iGCSE iPad
     
     NSString *FullString = [NSString stringWithFormat:@"productIdentifier=%@&DeviceID=%@&days=%@&transactionIdentifier=%@&B64receipt=%@&email=%@&password=%@&AppID=%@",FinalProductID,MyDeviceId,SubscriptionInDays,TransactionID,EncodedReceipt,EmailAddress,Password,VerificationAppID];
         

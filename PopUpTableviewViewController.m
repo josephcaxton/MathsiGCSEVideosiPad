@@ -302,9 +302,9 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
         MFMailComposeViewController *SendMailcontroller = [[MFMailComposeViewController alloc]init];
         SendMailcontroller.mailComposeDelegate = self;
         //[SendMailcontroller setToRecipients:SendTo];
-        [SendMailcontroller setSubject:@"Learn and revise Maths on the go - Maths App"];
+        [SendMailcontroller setSubject:@"Learn and revise Maths iGCSE on the go - Maths App"];
         
-        [SendMailcontroller setMessageBody:[NSString stringWithFormat:@"Checkout the FREE LearnersCloud Video App loaded with quality revision videos. To download this App for iPad <a href=http://itunes.apple.com/us/app/maths-videos/id522347113?ls=1&mt=8> click here</a>. For iPhone<a href=http://itunes.apple.com/us/app/maths-videos./id531691732?ls=1&mt=8> click here</a>. Or search LearnersCloud in your device’s App store. For loads more: www.Learnerscloud.com"] isHTML:YES];
+        [SendMailcontroller setMessageBody:[NSString stringWithFormat:@"Checkout the FREE LearnersCloud Video App loaded with quality revision videos. To download this App for iPad <a href=https://itunes.apple.com/us/app/maths-igcse-revision-videos/id581463148?ls=1&mt=8> click here</a>. For iPhone<a href=https://itunes.apple.com/us/app/igcse-maths-tutor-videos/id581472317?ls=1&mt=8> click here</a>. Or search LearnersCloud in your device’s App store. For loads more: www.Learnerscloud.com"] isHTML:YES];
         [self presentModalViewController:SendMailcontroller animated:YES];
         
 		
@@ -363,7 +363,7 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
 
 -(void)ConnectToFaceBook {
     
-    facebook = [[Facebook alloc] initWithAppId:@"319408714808003" andDelegate:self];
+    facebook = [[Facebook alloc] initWithAppId:@"561098840582490" andDelegate:self];
     
     //Save a pointer to this object for return from facebook
      AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -410,7 +410,7 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
 
 - (void) logoutButtonClicked:(id)sender {
     
-    facebook = [[Facebook alloc] initWithAppId:@"319408714808003" andDelegate:self];
+    facebook = [[Facebook alloc] initWithAppId:@"561098840582490" andDelegate:self];
     //Save a pointer to this object for return from facebook
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     appDelegate.m_facebook = facebook;
@@ -492,10 +492,10 @@ self.contentSizeForViewInPopover = CGSizeMake(108,400);
     
     if ([TWTweetComposeViewController canSendTweet])
     {
-        NSString *UrlString = @"http://itunes.apple.com/us/app/maths-videos/id522347113?ls=1&mt=8";
+        NSString *UrlString = @"https://itunes.apple.com/us/app/maths-igcse-revision-videos/id581463148?ls=1&mt=8";
         
         TWTweetComposeViewController *tweetSheet = [[TWTweetComposeViewController alloc] init];
-        [tweetSheet setInitialText:@"Checkout @LearnersCloud #Maths video app. Learn and revise Maths on the go."];
+        [tweetSheet setInitialText:@"Checkout @LearnersCloud #Maths video app. Learn and revise Maths #iGCSE on the go."];
         [tweetSheet addImage:[UIImage imageNamed:@"Icon-72.png"]];
         [tweetSheet addURL:[NSURL URLWithString:UrlString]];
         

@@ -173,7 +173,7 @@ static NSString* const kAnalyticsAccountId = @"UA-31484592-1";
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSString *deviceID = [prefs stringForKey:@"LCUIID"];
     
-    NSString *AppID = @"62";   // 62 means this is maths
+    NSString *AppID = @"66";   // 66 means this is mathsiGCSE
     NSString *queryString = [NSString stringWithFormat:@"%@/Services/iOS/VideoSubscription.asmx/HasCurrentSubscription",DomainName];
     NSURL *url = [NSURL URLWithString:queryString];
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];

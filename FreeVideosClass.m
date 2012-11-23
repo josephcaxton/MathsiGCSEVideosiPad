@@ -113,8 +113,8 @@
 	// Copy or Update the VideoConfig File;
    
     NSString *domain = appDelegate.DomainName;
-    NSString *queryFeed = [NSString stringWithFormat:@"%@/iosStream/maths/MathsConfig.xml",domain]; 
-    NSString *Dir = [appDelegate.applicationDocumentsDirectory stringByAppendingPathComponent:@"MathsConfig.xml"];
+    NSString *queryFeed = [NSString stringWithFormat:@"%@/iosStream/maths/MathsiGCSEConfig.xml",domain]; 
+    NSString *Dir = [appDelegate.applicationDocumentsDirectory stringByAppendingPathComponent:@"MathsiGCSEConfig.xml"];
     
          
    
@@ -180,7 +180,7 @@
     
     }
         
-    NSString *Dir = [appDelegate.applicationDocumentsDirectory stringByAppendingPathComponent:@"MathsConfig.xml"]; 
+    NSString *Dir = [appDelegate.applicationDocumentsDirectory stringByAppendingPathComponent:@"MathsiGCSEConfig.xml"]; 
    [self MyParser:Dir];
    //[self.tableView reloadData];
     
@@ -231,7 +231,7 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     //NSLog(@"%@", appDelegate.TempSubscibedProducts);
    
-    NSString *Dir = [appDelegate.applicationDocumentsDirectory stringByAppendingPathComponent:@"MathsConfig.xml"];
+    NSString *Dir = [appDelegate.applicationDocumentsDirectory stringByAppendingPathComponent:@"MathsiGCSEConfig.xml"];
     //[self AdjustProductSubscribedTo];
      FullSubscription = appDelegate.AccessAll;
      //NSLog(@"%@", appDelegate.TempSubscibedProducts);
@@ -261,7 +261,7 @@
     
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     NSString *domain = appDelegate.DomainName;
-    NSString *queryFeed = [NSString stringWithFormat:@"%@/iosStream/maths/MathsConfig.xml", domain];
+    NSString *queryFeed = [NSString stringWithFormat:@"%@/iosStream/maths/MathsiGCSEConfig.xml", domain];
 	NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:queryFeed]];
     NSURLResponse *resp = nil; 
     NSError *err = nil;
@@ -343,7 +343,7 @@
             obj.SociallyFree = NO; 
         }
 
-        obj.ProductID = @"Maths";
+        obj.ProductID = @"MathsiGCSE";
         //NSLog(@"Product is: %@",obj.ProductID);
         /*for (int i = 0; i < ProductsSubscibedTo.count; i++) {
             
@@ -651,7 +651,7 @@
         MFMailComposeViewController *SendMailcontroller = [[MFMailComposeViewController alloc]init];
         SendMailcontroller.mailComposeDelegate = self;
         [SendMailcontroller setToRecipients:SendTo];
-        [SendMailcontroller setSubject:[NSString stringWithFormat:@"%@ Maths video streaming iPad",DeviceID]];
+        [SendMailcontroller setSubject:[NSString stringWithFormat:@"%@ Maths iGCSE video streaming iPad",DeviceID]];
         
         [SendMailcontroller setMessageBody:[NSString stringWithFormat:@"Add Message here "] isHTML:NO];
         [self presentModalViewController:SendMailcontroller animated:YES];

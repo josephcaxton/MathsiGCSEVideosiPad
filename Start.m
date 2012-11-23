@@ -415,7 +415,7 @@
         
         // This is requesting access via Silverlight credentials
         
-        NSString *AppID = @"2";   // 2 means this is maths, 1 is English , 3 is physics 
+        NSString *AppID = @"5";   // 2 means this is maths, 1 is English , 3 is physics , 5 Maths iGCSE
         NSString *queryString = [NSString stringWithFormat:@"%@/Services/iOS/VideoSubscription.asmx/FindSLSubscription",domain];
         NSURL *url = [NSURL URLWithString:queryString];
         NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
@@ -559,7 +559,7 @@
               if (![[GANTracker sharedTracker] trackEvent:@"Successful Login via credentials"
                                                    action:@"Login to maths successful"
                                                     label:@"Login to maths successful"
-                                                    value:79
+                                                    value:1
                                                 withError:&error]) {
                   NSLog(@"error in trackEvent");
               }
