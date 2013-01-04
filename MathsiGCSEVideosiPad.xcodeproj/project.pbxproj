@@ -77,6 +77,11 @@
 		7C1CEBC1156141440065CA47 /* img18.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1CEBC0156141440065CA47 /* img18.png */; };
 		7C1CEBC3156141740065CA47 /* img23.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1CEBC2156141740065CA47 /* img23.png */; };
 		7C1E110D16403EF5006DF210 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1E110C16403EF5006DF210 /* AVFoundation.framework */; };
+		7C21286C1696E285008FAF30 /* nav_btn_coverage_deselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C21286B1696E285008FAF30 /* nav_btn_coverage_deselected.png */; };
+		7C21286F1696E801008FAF30 /* Coverage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C21286E1696E801008FAF30 /* Coverage.m */; };
+		7C2128721696EC64008FAF30 /* CoverageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2128711696EC64008FAF30 /* CoverageViewer.m */; };
+		7C2128761696F031008FAF30 /* MATHS-CAMBRIDGE-IGCSE.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C2128741696F031008FAF30 /* MATHS-CAMBRIDGE-IGCSE.pdf */; };
+		7C2128771696F031008FAF30 /* MATHS-EDEXCEL-IGCSE.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C2128751696F031008FAF30 /* MATHS-EDEXCEL-IGCSE.pdf */; };
 		7C232CDB150F8A36003349AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C232CDA150F8A36003349AE /* UIKit.framework */; };
 		7C232CDD150F8A36003349AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C232CDC150F8A36003349AE /* Foundation.framework */; };
 		7C232CDF150F8A36003349AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C232CDE150F8A36003349AE /* CoreGraphics.framework */; };
@@ -428,6 +433,13 @@
 		7C1CEBC0156141440065CA47 /* img18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img18.png; sourceTree = "<group>"; };
 		7C1CEBC2156141740065CA47 /* img23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img23.png; sourceTree = "<group>"; };
 		7C1E110C16403EF5006DF210 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7C21286B1696E285008FAF30 /* nav_btn_coverage_deselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_btn_coverage_deselected.png; sourceTree = "<group>"; };
+		7C21286D1696E801008FAF30 /* Coverage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coverage.h; sourceTree = "<group>"; };
+		7C21286E1696E801008FAF30 /* Coverage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coverage.m; sourceTree = "<group>"; };
+		7C2128701696EC64008FAF30 /* CoverageViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverageViewer.h; sourceTree = "<group>"; };
+		7C2128711696EC64008FAF30 /* CoverageViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverageViewer.m; sourceTree = "<group>"; };
+		7C2128741696F031008FAF30 /* MATHS-CAMBRIDGE-IGCSE.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "MATHS-CAMBRIDGE-IGCSE.pdf"; sourceTree = "<group>"; };
+		7C2128751696F031008FAF30 /* MATHS-EDEXCEL-IGCSE.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "MATHS-EDEXCEL-IGCSE.pdf"; sourceTree = "<group>"; };
 		7C232CD6150F8A36003349AE /* iGCSE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGCSE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C232CDA150F8A36003349AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7C232CDC150F8A36003349AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -760,9 +772,19 @@
 			path = "facebook-ios-sdk";
 			sourceTree = "<group>";
 		};
+		7C2128731696F023008FAF30 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				7C2128741696F031008FAF30 /* MATHS-CAMBRIDGE-IGCSE.pdf */,
+				7C2128751696F031008FAF30 /* MATHS-EDEXCEL-IGCSE.pdf */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
 		7C232CCB150F8A36003349AE = {
 			isa = PBXGroup;
 			children = (
+				7C2128731696F023008FAF30 /* Files */,
 				7C17EF36158DE24B00C7439E /* facebook-ios-sdk */,
 				7C45B8171557CF4100DE19B1 /* Analytics */,
 				7C4D8DF8151369E60065D044 /* VideoImages */,
@@ -847,6 +869,7 @@
 		7C232D0C150F9CC0003349AE /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				7C21286B1696E285008FAF30 /* nav_btn_coverage_deselected.png */,
 				7C9937E4162ABCCD00ECF902 /* btn_videos_deselected.png */,
 				7C232D13150F9D26003349AE /* 60-signpost.png */,
 			);
@@ -927,6 +950,10 @@
 				7C45B8151557C8B200DE19B1 /* HowtoUse.m */,
 				7C9251E9158B900E00C0E28F /* PopUpTableviewViewController.h */,
 				7C9251EA158B900E00C0E28F /* PopUpTableviewViewController.m */,
+				7C21286D1696E801008FAF30 /* Coverage.h */,
+				7C21286E1696E801008FAF30 /* Coverage.m */,
+				7C2128701696EC64008FAF30 /* CoverageViewer.h */,
+				7C2128711696EC64008FAF30 /* CoverageViewer.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1569,6 +1596,9 @@
 				7C8F821A165E8086004511A6 /* Icon-72@2x.png in Resources */,
 				7C8F821D165E809B004511A6 /* Icon-Small-50.png in Resources */,
 				7C8F821E165E809B004511A6 /* Icon-Small-50@2x.png in Resources */,
+				7C21286C1696E285008FAF30 /* nav_btn_coverage_deselected.png in Resources */,
+				7C2128761696F031008FAF30 /* MATHS-CAMBRIDGE-IGCSE.pdf in Resources */,
+				7C2128771696F031008FAF30 /* MATHS-EDEXCEL-IGCSE.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1599,6 +1629,8 @@
 				7C45B8161557C8B200DE19B1 /* HowtoUse.m in Sources */,
 				7C9251EB158B900E00C0E28F /* PopUpTableviewViewController.m in Sources */,
 				7C919EBF162985AE00958F1F /* TransparentToolBar.m in Sources */,
+				7C21286F1696E801008FAF30 /* Coverage.m in Sources */,
+				7C2128721696EC64008FAF30 /* CoverageViewer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
