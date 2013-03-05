@@ -1726,8 +1726,8 @@
 		7C232D04150F8A36003349AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Theta Computer Services Limited";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Theta Computer Services Limited";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VideoStreamer/MathsiGCSEVideosiPad-Prefix.pch";
 				INFOPLIST_FILE = "VideoStreamer/MathsiGCSEVideosiPad-Info.plist";
@@ -1738,8 +1738,8 @@
 					"\"$(SRCROOT)/facebook-ios-sdk\"",
 				);
 				PRODUCT_NAME = iGCSE;
-				PROVISIONING_PROFILE = "778B3F2E-6E4E-49CF-96E9-FEA217E38CE9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "778B3F2E-6E4E-49CF-96E9-FEA217E38CE9";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
