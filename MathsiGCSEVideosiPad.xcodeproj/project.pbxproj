@@ -63,6 +63,9 @@
 		7C1499CD15595F98001A3123 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1499C915595A4F001A3123 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7C17EF46158DE24B00C7439E /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7C17EF39158DE24B00C7439E /* FBDialog.bundle */; };
 		7C17EF47158DE24B00C7439E /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C17EF3F158DE24B00C7439E /* libfacebook_ios_sdk.a */; };
+		7C18049C16FB4EFB00DBCF78 /* website_promo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C18049A16FB4EFB00DBCF78 /* website_promo.png */; };
+		7C18049D16FB4EFB00DBCF78 /* website_promo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C18049B16FB4EFB00DBCF78 /* website_promo@2x.png */; };
+		7C18049F16FB5B5A00DBCF78 /* HowtouseVideoStreamer.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C18049E16FB5B5A00DBCF78 /* HowtouseVideoStreamer.pdf */; };
 		7C18BF3016282CC800CB0AC8 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C18BF2C16282CC800CB0AC8 /* Default-Landscape.png */; };
 		7C18BF3A1628510200CB0AC8 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C18BF381628510200CB0AC8 /* Background.png */; };
 		7C18BF3B1628510200CB0AC8 /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C18BF391628510200CB0AC8 /* Background@2x.png */; };
@@ -300,7 +303,6 @@
 		7C919EE81629C42900958F1F /* subscribe.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C919EE71629C42900958F1F /* subscribe.png */; };
 		7C9251EB158B900E00C0E28F /* PopUpTableviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9251EA158B900E00C0E28F /* PopUpTableviewViewController.m */; };
 		7C96F8FD162AE98D00CFA45F /* LearnersCloudTermsonapps.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C96F8FB162AE98D00CFA45F /* LearnersCloudTermsonapps.pdf */; };
-		7C96F8FE162AE98D00CFA45F /* HowtouseVideoStreamer.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7C96F8FC162AE98D00CFA45F /* HowtouseVideoStreamer.pdf */; };
 		7C96F902162AED8400CFA45F /* web_promo_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C96F901162AED8400CFA45F /* web_promo_btn.png */; };
 		7C9937CF162ABAE500ECF902 /* buy_now.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9937CD162ABAE500ECF902 /* buy_now.png */; };
 		7C9937D0162ABAE500ECF902 /* buy_now@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9937CE162ABAE500ECF902 /* buy_now@2x.png */; };
@@ -339,8 +341,6 @@
 		7CC6992115B31E1700A6A4DB /* img260.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CC6991715B31E1700A6A4DB /* img260.png */; };
 		7CD9381F162C45C9004EC5D8 /* share_intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD9381E162C45C9004EC5D8 /* share_intro.png */; };
 		7CD93821162C49B7004EC5D8 /* share_intro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD93820162C49B7004EC5D8 /* share_intro@2x.png */; };
-		7CD93824162C5871004EC5D8 /* website_promo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD93822162C5870004EC5D8 /* website_promo.png */; };
-		7CD93825162C5871004EC5D8 /* website_promo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD93823162C5871004EC5D8 /* website_promo@2x.png */; };
 		7CD93827162C5FDC004EC5D8 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD93826162C5FDC004EC5D8 /* Default-Portrait.png */; };
 		7CD9382B162C60D3004EC5D8 /* Default-Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD9382A162C60D3004EC5D8 /* Default-Portrait@2x.png */; };
 		7CD9382D162C6114004EC5D8 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD9382C162C6114004EC5D8 /* Default-Landscape@2x.png */; };
@@ -418,6 +418,9 @@
 		7C17EF43158DE24B00C7439E /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
 		7C17EF44158DE24B00C7439E /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
 		7C17EF45158DE24B00C7439E /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		7C18049A16FB4EFB00DBCF78 /* website_promo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = website_promo.png; sourceTree = "<group>"; };
+		7C18049B16FB4EFB00DBCF78 /* website_promo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "website_promo@2x.png"; sourceTree = "<group>"; };
+		7C18049E16FB5B5A00DBCF78 /* HowtouseVideoStreamer.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = HowtouseVideoStreamer.pdf; sourceTree = "<group>"; };
 		7C18BF2C16282CC800CB0AC8 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
 		7C18BF381628510200CB0AC8 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		7C18BF391628510200CB0AC8 /* Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background@2x.png"; sourceTree = "<group>"; };
@@ -677,7 +680,6 @@
 		7C9251E9158B900E00C0E28F /* PopUpTableviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpTableviewViewController.h; sourceTree = "<group>"; };
 		7C9251EA158B900E00C0E28F /* PopUpTableviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpTableviewViewController.m; sourceTree = "<group>"; };
 		7C96F8FB162AE98D00CFA45F /* LearnersCloudTermsonapps.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = LearnersCloudTermsonapps.pdf; sourceTree = "<group>"; };
-		7C96F8FC162AE98D00CFA45F /* HowtouseVideoStreamer.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = HowtouseVideoStreamer.pdf; sourceTree = "<group>"; };
 		7C96F901162AED8400CFA45F /* web_promo_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = web_promo_btn.png; sourceTree = "<group>"; };
 		7C9937CD162ABAE500ECF902 /* buy_now.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buy_now.png; sourceTree = "<group>"; };
 		7C9937CE162ABAE500ECF902 /* buy_now@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy_now@2x.png"; sourceTree = "<group>"; };
@@ -718,8 +720,6 @@
 		7CC6991715B31E1700A6A4DB /* img260.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img260.png; sourceTree = "<group>"; };
 		7CD9381E162C45C9004EC5D8 /* share_intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_intro.png; sourceTree = "<group>"; };
 		7CD93820162C49B7004EC5D8 /* share_intro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_intro@2x.png"; sourceTree = "<group>"; };
-		7CD93822162C5870004EC5D8 /* website_promo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = website_promo.png; sourceTree = "<group>"; };
-		7CD93823162C5871004EC5D8 /* website_promo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "website_promo@2x.png"; sourceTree = "<group>"; };
 		7CD93826162C5FDC004EC5D8 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		7CD9382A162C60D3004EC5D8 /* Default-Portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x.png"; sourceTree = "<group>"; };
 		7CD9382C162C6114004EC5D8 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
@@ -879,9 +879,9 @@
 		7C232D25150FA24A003349AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7CD93822162C5870004EC5D8 /* website_promo.png */,
-				7CD93823162C5871004EC5D8 /* website_promo@2x.png */,
 				7C96F901162AED8400CFA45F /* web_promo_btn.png */,
+				7C18049A16FB4EFB00DBCF78 /* website_promo.png */,
+				7C18049B16FB4EFB00DBCF78 /* website_promo@2x.png */,
 				7C9937CD162ABAE500ECF902 /* buy_now.png */,
 				7C9937CE162ABAE500ECF902 /* buy_now@2x.png */,
 				7C919EC616299EC700958F1F /* free.png */,
@@ -1231,7 +1231,7 @@
 				7CC6991615B31E1700A6A4DB /* img259.png */,
 				7CC6991715B31E1700A6A4DB /* img260.png */,
 				7C96F8FB162AE98D00CFA45F /* LearnersCloudTermsonapps.pdf */,
-				7C96F8FC162AE98D00CFA45F /* HowtouseVideoStreamer.pdf */,
+				7C18049E16FB5B5A00DBCF78 /* HowtouseVideoStreamer.pdf */,
 			);
 			name = VideoImages;
 			sourceTree = "<group>";
@@ -1582,12 +1582,9 @@
 				7C9937E3162ABC2900ECF902 /* icon_share_on_facebook.png in Resources */,
 				7C9937E5162ABCCD00ECF902 /* btn_videos_deselected.png in Resources */,
 				7C96F8FD162AE98D00CFA45F /* LearnersCloudTermsonapps.pdf in Resources */,
-				7C96F8FE162AE98D00CFA45F /* HowtouseVideoStreamer.pdf in Resources */,
 				7C96F902162AED8400CFA45F /* web_promo_btn.png in Resources */,
 				7CD9381F162C45C9004EC5D8 /* share_intro.png in Resources */,
 				7CD93821162C49B7004EC5D8 /* share_intro@2x.png in Resources */,
-				7CD93824162C5871004EC5D8 /* website_promo.png in Resources */,
-				7CD93825162C5871004EC5D8 /* website_promo@2x.png in Resources */,
 				7CD93827162C5FDC004EC5D8 /* Default-Portrait.png in Resources */,
 				7CD9382B162C60D3004EC5D8 /* Default-Portrait@2x.png in Resources */,
 				7CD9382D162C6114004EC5D8 /* Default-Landscape@2x.png in Resources */,
@@ -1599,6 +1596,9 @@
 				7C21286C1696E285008FAF30 /* nav_btn_coverage_deselected.png in Resources */,
 				7C2128761696F031008FAF30 /* MATHS-CAMBRIDGE-IGCSE.pdf in Resources */,
 				7C2128771696F031008FAF30 /* MATHS-EDEXCEL-IGCSE.pdf in Resources */,
+				7C18049C16FB4EFB00DBCF78 /* website_promo.png in Resources */,
+				7C18049D16FB4EFB00DBCF78 /* website_promo@2x.png in Resources */,
+				7C18049F16FB5B5A00DBCF78 /* HowtouseVideoStreamer.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

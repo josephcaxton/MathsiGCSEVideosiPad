@@ -223,6 +223,7 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     NSString *domainURL = appDelegate.DomainName;
     
+    if (appDelegate.UserEmail != nil){
     
     NSString *queryString = [NSString stringWithFormat:@"%@/Services/iOS/VideoSubscription.asmx/RecordVideoActivity",domainURL];
     
@@ -231,8 +232,8 @@
     NSURL *url = [NSURL URLWithString:queryString];
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
     
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    NSString *deviceID = [prefs stringForKey:@"LCUIID"];
+    //NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    //NSString *deviceID = [prefs stringForKey:@"LCUIID"];
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss zzz"];
@@ -252,7 +253,7 @@
      NSString *Starting = isStarting ? @"True" : @"False";
      NSString *ClipURN = self.VideoFileName;
     
-    NSString *FullString = [NSString stringWithFormat:@"DeviceID=%@&AppID=%@&clipURN=%@&isStart=%@&eventTime=%@",deviceID,AppId,ClipURN,Starting,Mutabletime];
+     NSString *FullString = [NSString stringWithFormat:@"DeviceID=%@&AppID=%@&clipURN=%@&isStart=%@&eventTime=%@",appDelegate.UserEmail,AppId,ClipURN,Starting,Mutabletime];
     
     
     NSData* data=[FullString dataUsingEncoding:NSUTF8StringEncoding];
@@ -274,7 +275,7 @@
         NSLog(@"error while starting the connection");
     }
     
-    
+    }
     
 }
 
