@@ -171,8 +171,13 @@
 -(NSString *)WorkOutSubsriptionInDays:(NSString*)theProductID{
     // Only 1 month to 1 Year subscription supported
 
-    
-    if ([[theProductID lowercaseString] isEqualToString:@"mathsigcse1month"] ){
+    if ([[theProductID lowercaseString] isEqualToString:@"mathsigcse1week"] ){
+        
+        return @"7";
+        
+    }
+
+  else if ([[theProductID lowercaseString] isEqualToString:@"mathsigcse1month"] ){
         
         return @"31";
         
