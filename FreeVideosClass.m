@@ -73,7 +73,7 @@
     UIButton *Subscribe = [UIButton buttonWithType:UIButtonTypeCustom];
     [Subscribe setBackgroundImage:SubscribeImage forState:UIControlStateNormal];
     Subscribe.tag = 1;
-    Subscribe.bounds = CGRectMake( 0, 0, 103, 37 );
+    Subscribe.bounds = CGRectMake( 0, 0, 94, 34 );
     [Subscribe addTarget:self action:@selector(GoSubScribe:)forControlEvents:UIControlEventTouchUpInside];
     SubscribeButton = [[UIBarButtonItem alloc] initWithCustomView:Subscribe];
     
@@ -177,6 +177,13 @@
     
 }
 - (void)viewWillAppear:(BOOL)animated {
+
+    // Check if search bar is on
+    if(mySearchBar.text.length > 0){
+        
+        [self searchBarCancelButtonClicked:mySearchBar];
+        
+    }
 
    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
