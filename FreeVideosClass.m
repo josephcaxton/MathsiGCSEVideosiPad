@@ -12,12 +12,13 @@
 #import "VideoPlayer.h"
 #import "Buy.h"
 #import "TransparentToolBar.h"
+#import "Start.h"
 
 
 @implementation FreeVideosClass
 
 
-@synthesize ArrayofConfigObjects,filteredArrayofConfigObjects,ProductIDs,ImageObjects,ProductsSubscibedTo,FullSubscription,popover,mySearchBar,buttons,SubscribeButton,ShareButton;
+@synthesize ArrayofConfigObjects,filteredArrayofConfigObjects,ProductIDs,ImageObjects,ProductsSubscibedTo,FullSubscription,popover,mySearchBar,buttons,SubscribeButton,ShareButton,LoginImage,LogoutImage,LoginLogoutbtn,LoginViaLearnersCloud,FreeSamples,FreeSamples_Copy;
 
 
 
@@ -25,15 +26,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	//self.navigationItem.title = @"Free and Subscription Videos";
+	
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     
+    UIButton *backbtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backbtn setBackgroundImage:[UIImage imageNamed:@"back_arrow40.png"] forState:UIControlStateNormal];
+    [backbtn addTarget:self action:@selector(goBack:) forControlEvents:UIControlEventTouchUpInside];
+    backbtn.frame=CGRectMake(0.0, 0.0, 64.0, 40.0);
+    UIBarButtonItem *GoBack = [[UIBarButtonItem alloc] initWithCustomView:backbtn];
+    self.navigationItem.leftBarButtonItem = GoBack;
+    
+
     self.tableView.backgroundView = nil;
     NSString *BackImagePath = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
 	UIImage *BackImage = [[UIImage alloc] initWithContentsOfFile:BackImagePath];
     self.view.backgroundColor = [UIColor colorWithPatternImage:BackImage];
     
+    NSString *LoginImagePath = [[NSBundle mainBundle] pathForResource:@"login" ofType:@"png"];
+    LoginImage = [[UIImage alloc] initWithContentsOfFile:LoginImagePath];
     
+    
+    
+    NSString *LogoutImagePath = [[NSBundle mainBundle] pathForResource:@"logout" ofType:@"png"];
+    LogoutImage = [[UIImage alloc] initWithContentsOfFile:LogoutImagePath];
+    
+
     
     // Listen to notification
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
@@ -44,7 +61,7 @@
     
     // create a toolbar where we can place some buttons, I have subclassed this to remove the default background
     TransparentToolBar* toolbar = [[TransparentToolBar alloc]
-                                   initWithFrame:CGRectMake(0, 0, 110, 45)];
+                                   initWithFrame:CGRectMake(0, 0, 210, 45)];
     
     
     
@@ -54,12 +71,32 @@
     // create an array for the buttons
     buttons = [[NSMutableArray alloc] initWithCapacity:2];
     
-    /*create Report Problem Button
-     UIBarButtonItem *SendSupportMail = [[UIBarButtonItem alloc] initWithTitle:@"Report Problem" style: UIBarButtonItemStyleBordered target:self action:@selector(ReportProblem:)];
-     
-     //self.navigationItem.rightBarButtonItem = SendSupportMail;
-     
-     [buttons addObject:SendSupportMail]; */
+    
+    if(appDelegate.UserEmail == nil){
+        
+        
+        LoginLogoutbtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [LoginLogoutbtn setBackgroundImage:LoginImage forState:UIControlStateNormal];
+        [LoginLogoutbtn addTarget:self action:@selector(LoginUser:) forControlEvents:UIControlEventTouchUpInside];
+        LoginLogoutbtn.frame=CGRectMake(0.0, 0.0, 60.0, 40.0);
+        
+        LoginViaLearnersCloud = [[UIBarButtonItem alloc] initWithCustomView:LoginLogoutbtn];
+        LoginViaLearnersCloud.tag  = 1;
+        [buttons addObject:LoginViaLearnersCloud];
+        
+        
+    }else
+    {
+        LoginLogoutbtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [LoginLogoutbtn setBackgroundImage:LogoutImage forState:UIControlStateNormal];
+        [LoginLogoutbtn addTarget:self action:@selector(LogoutUser:) forControlEvents:UIControlEventTouchUpInside];
+        LoginLogoutbtn.frame=CGRectMake(0.0, 0.0, 71.0, 40.0);
+        LoginViaLearnersCloud = [[UIBarButtonItem alloc] initWithCustomView:LoginLogoutbtn];
+        LoginViaLearnersCloud.tag  = 2;
+        [buttons addObject:LoginViaLearnersCloud];
+        
+    }
+   
     
     // create a spacer between the buttons
     UIBarButtonItem *spacer = [[UIBarButtonItem alloc]
@@ -73,12 +110,20 @@
     UIButton *Subscribe = [UIButton buttonWithType:UIButtonTypeCustom];
     [Subscribe setBackgroundImage:SubscribeImage forState:UIControlStateNormal];
     Subscribe.tag = 1;
-    Subscribe.bounds = CGRectMake( 0, 0, 94, 34 );
+    Subscribe.frame = CGRectMake( 0.0, 0.0, 89, 43 );
     [Subscribe addTarget:self action:@selector(GoSubScribe:)forControlEvents:UIControlEventTouchUpInside];
     SubscribeButton = [[UIBarButtonItem alloc] initWithCustomView:Subscribe];
     
     
-    ShareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" style: UIBarButtonItemStyleBordered target:self action:@selector(share:)];
+    // Share Button
+    UIImage *ShareImage = [UIImage imageNamed:@"share_hit40.png"];
+    UIButton *Sharebtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [Sharebtn setBackgroundImage:ShareImage forState:UIControlStateNormal];
+    Sharebtn.frame = CGRectMake( 0.0, 0.0, 69, 43 );
+    [Sharebtn addTarget:self action:@selector(share:)forControlEvents:UIControlEventTouchUpInside];
+    ShareButton = [[UIBarButtonItem alloc] initWithCustomView:Sharebtn];
+    
+
     
     if(appDelegate.AccessAll == TRUE){
         
@@ -154,7 +199,8 @@
     
     ArrayofConfigObjects = [[NSMutableArray alloc] init];
     filteredArrayofConfigObjects = [[NSMutableArray alloc] init];
-   
+    FreeSamples = [[NSMutableArray alloc] init];
+    FreeSamples_Copy = [[NSMutableArray alloc] init];
         
     }
     else
@@ -209,6 +255,7 @@
     
     [ArrayofConfigObjects removeAllObjects];
     [filteredArrayofConfigObjects removeAllObjects];
+     [FreeSamples removeAllObjects];
     
     NSString *Dir = [appDelegate.applicationDocumentsDirectory stringByAppendingPathComponent:@"MathsiGCSEConfig.xml"]; 
    [self MyParser:Dir];
@@ -268,6 +315,7 @@
      //NSLog(@"%@",  ProductsSubscibedTo);
     [ArrayofConfigObjects removeAllObjects];
     [filteredArrayofConfigObjects removeAllObjects];
+    [FreeSamples removeAllObjects];
 
     [self MyParser:Dir];
     [self.tableView reloadData];
@@ -389,12 +437,20 @@
         
         [ArrayofConfigObjects addObject:obj];
         
+        if ([Free isEqualToString: @"1"]){
+            
+            
+            [FreeSamples addObject:obj];
+            
+        }
+
         
        // NSLog(@"Title in my array is: %@",obj.VideoTitle);
 				
 		
 
 	}
+    FreeSamples_Copy = [FreeSamples mutableCopy];
      filteredArrayofConfigObjects = [ArrayofConfigObjects mutableCopy];
 }
 
@@ -403,18 +459,73 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
 	
-	int	count = 1;
+	int	count = 2;
 	
 	return count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
    
-    NSInteger numberOfRows =[filteredArrayofConfigObjects count];
+    
+    NSInteger numberOfRows = 0;
+    
+    if(section == 0){
+        
+        numberOfRows = [FreeSamples count];
+        
+    }
+    else if (section == 1)
+    {
+        
+        numberOfRows =[filteredArrayofConfigObjects count];
+        
+    }
+
 	
     return numberOfRows;
 	
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UIView *aView = [[UIView alloc] initWithFrame:CGRectZero];
+    aView.backgroundColor = [UIColor clearColor];
+    
+    UILabel *sectionHeader = [[UILabel alloc] initWithFrame:CGRectMake(tableView.frame.origin.x + 50.0, 10, tableView.frame.size.width -12.0, 21)];
+    sectionHeader.textAlignment = UITextAlignmentLeft;
+    sectionHeader.backgroundColor = [UIColor clearColor];
+    sectionHeader.font = [UIFont boldSystemFontOfSize:20];
+    sectionHeader.textColor = [UIColor whiteColor];
+    if(section == 0){
+        if([FreeSamples count] > 0){
+            sectionHeader.text =@"Free Samples";
+        }
+        else{
+            sectionHeader.text =@"";
+        }
+    }
+    else if(section == 1){
+        if([filteredArrayofConfigObjects count] > 0 && FullSubscription == FALSE ){
+            sectionHeader.text = @"iGCSE Maths – Start today from only £1.49";
+        }
+        else if ([filteredArrayofConfigObjects count] > 0 && FullSubscription == TRUE ){
+            sectionHeader.text = @"My Courses – iGCSE Maths";
+        }
+        else{
+            sectionHeader.text =@"";
+        }
+    }
+    
+    [aView addSubview:sectionHeader];
+    return aView;
+    
+    
+}
+
+
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -426,105 +537,72 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    
-    ConfigObject *obj = [filteredArrayofConfigObjects objectAtIndex:indexPath.row];
-    //Change how image is loaded
-    //NSString *PicLocation = [[NSString alloc] initWithFormat:@"%@",[obj Thumbnail]];
-    //UIImage* theImage = [UIImage imageNamed:PicLocation];
-    
-
-    //UIImage* theImage =[ImageObjects objectAtIndex:indexPath.row];
-    // Here i am picking up image randomly in which case i don't have to add any more images to bundle
-     UIImage* theImage =[ImageObjects objectAtIndex:arc4random() % 259];
-    cell.imageView.image = theImage;
-    
-    cell.textLabel.text = [obj VideoTitle];
-    
-    // Is it free?
-    if ([obj Free] == YES){
-       
-         
-         NSString* descriptiontxt = [obj VideoDescription];
-       
+    if (indexPath.section == 0 ){
         
-         //NSString* FullDesciption = [descriptiontxt stringByAppendingString:@" - Free view"];
+        ConfigObject *obj = [FreeSamples objectAtIndex:indexPath.row];
+        UIImage* theImage =[ImageObjects objectAtIndex:arc4random() % 259];
+        cell.imageView.image = theImage;
+        
+        cell.textLabel.text = [obj VideoTitle];
+        
+        NSString* descriptiontxt = [obj VideoDescription];
+        
+        
         cell.detailTextLabel.text =descriptiontxt;
-         cell.detailTextLabel.textColor = [UIColor blueColor];
+        cell.detailTextLabel.textColor = [UIColor blueColor];
         UIImage *FreeImage = [UIImage imageNamed:@"free.png"];
         UIButton *btnFree = [UIButton buttonWithType:UIButtonTypeCustom];
         UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
         if (orientation == UIDeviceOrientationPortrait || orientation == UIDeviceOrientationPortraitUpsideDown)
         {
-             btnFree.frame = CGRectMake(650, 5, 72, 35);
+            btnFree.frame = CGRectMake(650, 5, 72, 35);
         }
         else{
             
             btnFree.frame = CGRectMake(900, 5, 72, 35);
         }
-               
+        
         [btnFree setBackgroundImage:FreeImage forState:UIControlStateNormal];
         btnFree.tag = indexPath.row;
-        [btnFree addTarget:self action:@selector(ViewFree:) forControlEvents:UIControlEventTouchUpInside];
+        [btnFree addTarget:self action:@selector(ViewFreeSectionOne:) forControlEvents:UIControlEventTouchUpInside];
         [cell addSubview:btnFree];
         
+        
     }
     
-    else if ([obj SociallyFree] == YES){
+    else if(indexPath.section == 1){
+        ConfigObject *obj = [filteredArrayofConfigObjects objectAtIndex:indexPath.row];
         
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        NSString* descriptiontxt = [obj VideoDescription];
-         NSString* FullDesciption = @"";
-        // Check if we are in full subscription if so Change text to paid
+        // Here i am picking up image randomly in which case i don't have to add any more images to bundle
+        UIImage* theImage =[ImageObjects objectAtIndex:arc4random() % 259];
+        cell.imageView.image = theImage;
+        
+        cell.textLabel.text = [obj VideoTitle];
+        
+        // Is user Subscribed?
         if(FullSubscription == TRUE){
-            FullDesciption = [descriptiontxt stringByAppendingString:@""];
-        }
-        else {
-            FullDesciption = [descriptiontxt stringByAppendingString:@" - Free gift if you share"];
-        }
-        cell.detailTextLabel.text =FullDesciption;
-        cell.detailTextLabel.textColor = [UIColor blueColor];
-
-        
-    }
-    // Is user Subscribed?
-    else if([obj Subcribed] == YES || FullSubscription == TRUE){
-        
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        NSString* descriptiontxt = [obj VideoDescription];
-        NSString* FullDesciption = [descriptiontxt stringByAppendingString:@""];
-        cell.detailTextLabel.text =FullDesciption;
-        cell.detailTextLabel.textColor = [UIColor blueColor];
-        
-    }
-    // Sorry mate you have to buy
-    else
-    {
-        
-        
-          NSString* descriptiontxt = [obj VideoDescription];
-         cell.detailTextLabel.text = descriptiontxt;
-         cell.detailTextLabel.textColor = [UIColor redColor];
-        
-       /* UIImage *FreeImage = [UIImage imageNamed:@"subscribe.png"];
-        UIButton *btnSubscribe = [UIButton buttonWithType:UIButtonTypeCustom];
-        UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-        if (orientation == UIDeviceOrientationPortrait || orientation == UIDeviceOrientationPortraitUpsideDown)
-        {
-            btnSubscribe.frame = CGRectMake(620, 5, 103, 35);
-        }
-        else{
             
-            btnSubscribe.frame = CGRectMake(870, 5, 103, 35);
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            NSString* descriptiontxt = [obj VideoDescription];
+            NSString* FullDesciption = [descriptiontxt stringByAppendingString:@""];
+            cell.detailTextLabel.text =FullDesciption;
+            cell.detailTextLabel.textColor = [UIColor blueColor];
+            
+        }
+        // Sorry mate you have to buy
+        else
+        {
+            
+            
+            NSString* descriptiontxt = [obj VideoDescription];
+            cell.detailTextLabel.text = descriptiontxt;
+            cell.detailTextLabel.textColor = [UIColor redColor];
+            
+            
+            
         }
         
-        [btnSubscribe setBackgroundImage:FreeImage forState:UIControlStateNormal];
-        btnSubscribe.tag = indexPath.row;
-        [btnSubscribe addTarget:self action:@selector(GoSubScribe:) forControlEvents:UIControlEventTouchUpInside];
-        [cell addSubview:btnSubscribe];*/
-
     }
-   
-    
     
 	
 	
@@ -542,16 +620,31 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    ConfigObject *obj = [filteredArrayofConfigObjects objectAtIndex:indexPath.row];
     
-    if ([obj Free] == YES || [obj Subcribed] == YES || FullSubscription == TRUE) {
+    
+    if (indexPath.section == 0) {
         
-    VideoPlayer *VP1 = [[VideoPlayer alloc] initWithNibName:nil bundle:nil];
-    VP1.FreeView = self;
-    VP1.VideoFileName =[NSString stringWithString:[obj M3u8]];
+        ConfigObject *obj = [FreeSamples objectAtIndex:indexPath.row];
+        VideoPlayer *VP1 = [[VideoPlayer alloc] initWithNibName:nil bundle:nil];
+        VP1.FreeView = self;
+        VP1.VideoFileName =[NSString stringWithString:[obj M3u8]];
         
-    [self.navigationController pushViewController:VP1 animated:YES];
+        [self.navigationController pushViewController:VP1 animated:YES];
+        
     }
+    else
+    {
+        
+        ConfigObject *obj = [filteredArrayofConfigObjects objectAtIndex:indexPath.row];
+        
+        if (FullSubscription == TRUE) {
+            
+            VideoPlayer *VP1 = [[VideoPlayer alloc] initWithNibName:nil bundle:nil];
+            VP1.FreeView = self;
+            VP1.VideoFileName =[NSString stringWithString:[obj M3u8]];
+            
+            [self.navigationController pushViewController:VP1 animated:YES];
+        }
     else if ([obj SociallyFree] == YES){
         // Have you shared if so view video
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
@@ -595,7 +688,7 @@
         
     }
          
-
+    }
 
 }
 
@@ -614,6 +707,20 @@
     
     
 }
+-(IBAction)ViewFreeSectionOne:(UIButton*)sender{
+    
+    int tag = sender.tag;
+    
+    ConfigObject *obj = [FreeSamples objectAtIndex:tag];
+    VideoPlayer *VP1 = [[VideoPlayer alloc] initWithNibName:nil bundle:nil];
+    VP1.FreeView = self;
+    VP1.VideoFileName =[NSString stringWithString:[obj M3u8]];
+    
+    [self.navigationController pushViewController:VP1 animated:YES];
+    
+}
+
+
 
 -(IBAction)GoSubScribe:(UIButton*)sender{
     
@@ -678,8 +785,8 @@
 
 
 - (IBAction)share:(id)sender{
-    UIBarButtonItem *Barbutton = (UIBarButtonItem*)sender;
-    UIView *button = [Barbutton valueForKey:@"view"];
+    UIButton *button = (UIButton*)sender;
+    //UIView *button = [Barbutton valueForKey:@"view"];
     
     PopUpTableviewViewController *tableViewController = [[PopUpTableviewViewController alloc] initWithStyle:UITableViewStylePlain];
     
@@ -761,6 +868,7 @@
     
     //empty previous search results
     [filteredArrayofConfigObjects removeAllObjects];
+    [FreeSamples removeAllObjects];
     [self.tableView reloadData];
 }
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
@@ -771,12 +879,14 @@
     
     //empty previous search results
     [filteredArrayofConfigObjects removeAllObjects];
+    [FreeSamples removeAllObjects];
     
     NSString *searchString = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if([searchString isEqualToString:@""] || searchString==nil){
         //show original dataset records
         filteredArrayofConfigObjects = [ArrayofConfigObjects mutableCopy];
+         FreeSamples = [FreeSamples_Copy mutableCopy];
         [self.tableView reloadData];
     }
     
@@ -811,6 +921,8 @@
     
     [filteredArrayofConfigObjects removeAllObjects];
     filteredArrayofConfigObjects = [ArrayofConfigObjects mutableCopy];
+    [FreeSamples removeAllObjects];
+    FreeSamples = [FreeSamples_Copy mutableCopy];
     [self.tableView reloadData];
     [searchBar resignFirstResponder];
     searchBar.text = @"";
@@ -821,6 +933,29 @@
 }
 
 
+-(void)goBack:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(IBAction)LogoutUser:(id)sender{
+    
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    appDelegate.FlagToLoginOrLogout = [NSNumber numberWithInt:2];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+-(IBAction)LoginUser:(id)sender{
+    
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    appDelegate.FlagToLoginOrLogout = [NSNumber numberWithInt:1];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
 
 
 

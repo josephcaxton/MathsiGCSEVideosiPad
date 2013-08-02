@@ -171,8 +171,10 @@
         
     if ([ReviewID isEqualToString:@"11"] && [IhaveReviewed isEqualToString:@"0"] ) {
         
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Review this app" message:@"Do you like this app enough to leave us a review?" delegate:FreeView cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-    [alertView show];
+        UIAlertView *ReviewalertView = [[UIAlertView alloc] initWithTitle:@"Review this app" message:@"Do you like this app enough to leave us a review?" delegate:FreeView cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        ReviewalertView.tag = 999;
+        [ReviewalertView show];
+
     
 	}
     else {
