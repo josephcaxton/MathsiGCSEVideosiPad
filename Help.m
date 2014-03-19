@@ -152,7 +152,7 @@
     }
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-  	
+  		[self willAnimateRotationToInterfaceOrientation:self.interfaceOrientation duration:1];
 	return cell;
 	
 }
