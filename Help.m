@@ -212,14 +212,22 @@
         
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
         NSString *DeviceID = [prefs stringForKey:@"LCUIID"];
+        NSString *LCNOAuth = [prefs stringForKey:@"LCNOAuth"];
+        NSString *DeviceIDWhenPurchase = [prefs stringForKey:@"LCNOAuthDeviceID"];
         
         NSArray *SendTo = [NSArray arrayWithObjects:@"support@LearnersCloud.com",nil];
         
         MFMailComposeViewController *SendMailcontroller = [[MFMailComposeViewController alloc]init];
         SendMailcontroller.mailComposeDelegate = self;
         [SendMailcontroller setToRecipients:SendTo];
+        if([LCNOAuth isEqualToString:@"contactsupport"]){
+            
+            [SendMailcontroller setSubject:[NSString stringWithFormat:@"%@ / * %@ Maths iGCSE video streaming iPad",DeviceID,DeviceIDWhenPurchase]];
+        }
+        else{
+
         [SendMailcontroller setSubject:[NSString stringWithFormat:@"%@ Maths iGCSE video streaming iPad",DeviceID]];
-        
+        }
         [SendMailcontroller setMessageBody:[NSString stringWithFormat:@"Add Message here "] isHTML:NO];
         [self presentModalViewController:SendMailcontroller animated:YES];
         
