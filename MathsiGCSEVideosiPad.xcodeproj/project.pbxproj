@@ -398,7 +398,7 @@
 		7C232CCD150F8A36003349AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = caxtonidowu;
 				TargetAttributes = {
 					7C232CD5150F8A36003349AE = {
@@ -502,10 +502,12 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph caxton (99S98QLWW3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph caxton (99S98QLWW3)";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -541,10 +543,12 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Theta Computer Services Limited";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Theta Computer Services Limited";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -581,9 +585,10 @@
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/facebook-ios-sdk\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = iGCSE;
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C923AE60-3C9F-41F9-9AD1-8EF2A3674890";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8c7e331c-e8d2-487e-9733-bf31172bc7ce";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -606,9 +611,10 @@
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/facebook-ios-sdk\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = iGCSE;
-				PROVISIONING_PROFILE = "7FAB29C4-C84B-4DE3-A4F6-E87637F77FD7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7FAB29C4-C84B-4DE3-A4F6-E87637F77FD7";
+				PROVISIONING_PROFILE = "6142a50d-8d43-437c-8d97-2db7d7b2f8e5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6142a50d-8d43-437c-8d97-2db7d7b2f8e5";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
